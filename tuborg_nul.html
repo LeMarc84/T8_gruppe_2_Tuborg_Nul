@@ -102,8 +102,8 @@
                 <div class="txt">
                     <h1>Duft og smag</h1>
                     <p>Tuborg NUL er en læskende pilsner med frugtige noter, som vi kender det fra en Grøn Tuborg. Men alligevel helt sin egen - og helt uden alkohol …selvfølgelig. Dette gør den bl.a. idiel at bruge til bl.a. madlavning, velkomstdrinks og m.m. Tjek vores opskrifter ud på instagram, og del gerne dine egne med #TuborgNul #ØlTilLivet </p>
-                    <div class="col">
-                        <img src="images/smag.jpg" alt="Instagram">
+                    <div class="billede">
+                        <img src="images/smag.jpg" alt="Smag">
                     </div>
                 </div>
             </div>
@@ -113,25 +113,19 @@
         </div>
     </section>
 
-    <!--Næringsindhold--->
-    <section id="næringsindhold">
-        <div class="sectionwrapper">
-        </div>
-    </section>
-
     <!--Anmeldelser - Kunderne siger--->
     <section id="anmeldelser">
         <div class="overskrift">
-            <h1>Kunderne siger:</h1>
+            <h1>Forbrugerne siger:</h1>
         </div>
         <div class="sectionwrapper">
             <div class="col">
                 <div class="persona">
                     <img src="images/personaer/Rose.png" alt="Rose">
                     <div class="box">
-                        <p>"Jeg er blevet helt vild med at bruge Tuborg Nul, i madlavning. Indtil vidre kan den bruges til at lave de mest perfetke og sprøde pandekager!"
-                        </p>
                         <h2>Rose, 30 år.</h2>
+                        <p>"Jeg er blevet helt vild med at bruge Tuborg Nul, i madlavning. Indtil vidre kan den bruges til at lave de mest perfekte og sprøde pandekager!"
+                        </p>
                     </div>
                 </div>
             </div>
@@ -139,9 +133,9 @@
                 <div class="persona">
                     <img src="images/personaer/Martin.png" alt="Martin">
                     <div class="box">
-                        <p>"Manden og jeg glæder os til at kunne bruge Tuborg Nul, som velkomstdring til vores bryllup. Den smager himmelsk med lidt sukker, passionsfrugt og knust is! Og nu hvor den er alkoholfri kan det være onkel bent, kan holde sig i skindet, gennem hele festen"
-                        </p>
                         <h2>Martin, 25 år.</h2>
+                        <p>"Manden og jeg glæder os til at kunne bruge Tuborg Nul, som velkomstdring til vores bryllup. Den smager himmelsk med lidt sukker, passionsfrugt og knust is! Og nu hvor den er alkoholfri kan det være onkel Bent, kan holde sig i skindet, gennem hele festen"
+                        </p>
                     </div>
                 </div>
             </div>
@@ -149,14 +143,58 @@
                 <div class="persona">
                     <img src="images/personaer/Kathrine.png" alt="Katrine">
                     <div class="box">
+                        <h2>Kathrine, 35 år.</h2>
                         <p>"Endelig en alkoholfri øl som smager godt! Så kan jeg endelig snuppe en øl med vennerne, og stadig være frisk til at arbejde dagen efter"
                         </p>
-                        <h2>Kathrine, 35 år.</h2>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!--Næringsindhold--->
+
+    <section id="næringsindhold">
+        <div class="sectionwrapper">
+            <h1>"Det er det inden i der tæller"</h1>
+            <p>Hold musen over vores Tuborg NUL, og se hvad den indeholder.</p>
+            <img class="pic" src="images/tuborg-nul.png" alt="Tuborg Nul">
+            <div class="popup">
+                <h2>Type</h2>
+                <p>Pilsner</p>
+                <h2>Alkohol</h2>
+                <p>0 % vol</p>
+                <h2>Udseende</h2>
+                <p>I glasset står den gylden med kridthvidt skum</p>
+                <h2>
+                    Ingredienser:
+                </h2>
+                <p>
+                    Vand, bygmalt, kuldioxid, naturlige aromaer og humle.
+                </p>
+                <h2>Næringsindhold</h2>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Spil-->
+    <section id="spil">
+        <div class="sectionwrapper">
+            <div class="col">
+                <div class="txt">
+                    <h1>Tuborg Nul - Spillet</h1>
+                    <p>Prøv spillet og hjælp Rose med at holde den lave promille</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="section_item">
+                    <embed src="http://bittenbybeauty.dk/kea/0.2/tema8/olspil/index.html" style="width: 100%; height: 400px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!--Footer--->
     <footer class="footer">
@@ -231,5 +269,42 @@
                 burgerButton.classList.add("toggle");
             }
         }
+
+        const output = document.querySelector('#output');
+
+        document.querySelector("#tuborg").forEach((img, i) => {
+            img.setAttribute("y1", 100 - values[i]);
+
+            //vis data i output ved mouseover
+            tuborg.addEventListener("mouseover", e => vis(e));
+
+            //skjul data ved mouseout
+            tuborg.addEventListener("mouseout", skjul);
+        });
+
+        //denne funktion viser <p> output-elementet og ændrer textContent dynamisk
+        function vis(e) {
+            //e henviser til mouseover event
+            //    output.textContent = e.target.dataset.value + " stk. " + e.target.dataset.procent + "%";
+            output.style.display = "block";
+            //NB! Denne eventlistener er på window
+            window.addEventListener("mouseover", followMouse);
+        }
+
+        //denne funktion får output elementet til at følge musemarkøren, hvis
+        function followMouse(e) {
+            //e henviser her til mouseover event
+            output.style.top = (e.clientY - 50) + 'px';
+            output.style.left = (e.clientX) + 'px';
+        }
+
+        //denne funktion skjuler output-elementet og fjerner eventlistener fra window
+        function skjul() {
+            output.style.display = "none";
+            window.removeEventListener("mouseover", followMouse);
+        }
+
     </script>
-</body></html>
+</body>
+
+</html>

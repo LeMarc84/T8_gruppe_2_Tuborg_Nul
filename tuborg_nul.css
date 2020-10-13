@@ -3,13 +3,14 @@ img {
     width: 100%;
     border: 0;
     height: auto;
+    border-radius: 10px;
 }
 
 body {
     margin: 0;
     max-width: 100vw;
     overflow-x: hidden;
-    background-color: hotpink;
+    background-color: #e7e7e5;
 }
 
 html {
@@ -40,13 +41,15 @@ h2 {
     font-family: 'Lora', serif;
     font-weight: 600;
     font-size: 1.3em;
-    color: rgba(37, 61, 128, 0.83);
+    color: #a8a8a8;
 }
 
 h3 {
-    font-family: safety;
-    font-weight: 100;
+    font-family: 'Lora';
+    font-weight: bold;
     font-style: italic;
+    font-size: 1.7em;
+    color: white;
 }
 
 p {
@@ -55,9 +58,10 @@ p {
     font-size: 1.06em;
 }
 
-.sectionwrapper {
-    width: 80%;
-    margin: auto;
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-right: 60px;
 }
 
 /*-----Animation-----*/
@@ -211,7 +215,7 @@ left: 0;
 /*-----intro til Tuborg Nul-----*/
 
 #intro {
-    padding: 55px 0px;
+    padding: 20px 0px;
 }
 
 #intro .sectionwrapper {
@@ -229,8 +233,12 @@ left: 0;
 
 #kampagnevideo {
     background-color: #253d80;
-    padding: 25px 0px 1px;
+    padding: 25px 0px 20px;
     max-width: 100vw;
+}
+
+#kampagnevideo .sectionwrapper {
+    padding: 20px 60px;
 }
 
 #kampagnevideo h1 {
@@ -244,27 +252,15 @@ left: 0;
     width: 350px;
 }
 
-.videoInfo a {
-    color: #fd6d6f;
-}
-
-.videoInfo {
-    max-width: 1052px;
-    margin-left: 158px;
-    margin-bottom: 90px;
-}
-
 
 iframe {
     width: 100%;
 }
 
-.videoInfo a {
-    color: #fd6d6f;
-    font-family: safety;
-    font-size: 1rem;
-    transition: all .3s ease;
-    margin: 4rem 0;
+.videoInfo {
+    max-width: 1052px;
+    margin-left: 16px;
+    margin-bottom: 60px;
 }
 
 
@@ -289,33 +285,13 @@ iframe {
     width: 350px;
 }
 
-.videoInfo a {
-    color: #fd6d6f;
-}
-
-.videoInfo {
-    max-width: 1052px;
-    margin-left: 158px;
-    margin-bottom: 90px;
-}
-
 
 iframe {
     width: 100%;
 }
 
-.videoInfo a {
-    color: #fd6d6f;
-    font-family: safety;
-    font-size: 1rem;
-    transition: all .3s ease;
-    margin: 4rem 0;
-}
-
 
 /*-SoMe Video-*/
-
-
 
 #soMeVideo {
     padding: 25px 0px 1px;
@@ -329,10 +305,6 @@ iframe {
     width: 350px;
 }
 
-.videoInfo a {
-    color: #fd6d6f;
-}
-
 .videoInfo {
     max-width: 1052px;
     margin-left: 158px;
@@ -340,46 +312,19 @@ iframe {
 }
 
 
-iframe {
-    width: 100%;
-}
-
-.videoInfo a {
-    color: #fd6d6f;
-    font-family: safety;
-    font-size: 1rem;
-    transition: all .3s ease;
-    margin: 4rem 0;
-}
-
-
-
-
-
-
-
-
-
 /*-----Citat fra Tuborg-----*/
 
 #citat {
     text-align: center;
     background-color: #0c1244;
-    padding: 50px;
-}
-
-#citat h3 {
-    color: white;
-    font-size: 1.7rem;
-    font-weight: bold;
-
+    padding: 25px;
 }
 
 
 /*-----Duft og smag - Reklame-----*/
 
 #reklame {
-    padding: 55px 0px;
+    padding: 20px 0px;
 }
 
 #reklame .sectionwrapper {
@@ -393,20 +338,87 @@ iframe {
     margin-left: 10%;
 }
 
+#reklame .billede {
+    align-items: flex-start;
+}
 
 /*-----Næringsindhold-----*/
+
+#næringsindhold img {
+    width: 20%;
+}
+
+#næringsindhold {
+    padding: 20px;
+}
+
+#næringsindhold h1 {
+    font-style: italic;
+}
+
+#næringsindhold p {
+    margin-top: -16px;
+}
+
+#næringsindhold .sectionwrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.wrap {
+    position: absolute;
+}
+
+.popup {
+    /*display: none;*/
+    position: absolute;
+    background: #093A82;
+    background: #FAC177;
+    opacity: 0.85;
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    /* margin-top: -105px; */
+    /* margin-left: 40px; */
+    color: white;
+    z-index: 1;
+    padding: 10px;
+    margin-left: 16%;
+    margin-top: -28%;
+}
+
+.popup:before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: -25px;
+    z-index: 2;
+    /*    border: solid 15px transparent;*/
+    border-right-color: black;
+    color: #1E90FF;
+    pointer-events: none;
+}
+
+.pic {
+    z-index: 0;
+}
+
+.pic:hover + .popup {
+    display: block;
+}
 
 
 
 /*-----Anmeldelser-----*/
 
 .overskrift {
-    width: 80%;
     margin: auto;
 }
 
 #anmeldelser h1 {
-    margin-left: 10%;
+    margin-left: 25px;
 }
 
 #anmeldelser p {
@@ -415,7 +427,8 @@ iframe {
 
 #anmeldelser {
     background-color: #f6B976;
-    padding: 43px 23px;
+    padding: 50px 150px;
+    max-width: 1500px;
 }
 
 #anmeldelser .sectionwrapper {
@@ -426,12 +439,12 @@ iframe {
 #anmeldelser .col {
     background-color: white;
     flex-grow: 1;
-    flex-basis: 169px;
+    flex-basis: 100px;
     display: flex;
     flex-direction: column;
-    border-radius: 2%;
+    border-radius: 10px;
     margin: 20px;
-    padding-top: 15px;
+    padding-top: 10px;
 }
 
 #anmeldelser .box {
@@ -440,8 +453,9 @@ iframe {
 }
 
 #anmeldelser img {
-    width: 80%;
-    padding-left: 25px;
+    width: 85%;
+    padding: 20px;
+    justify-content: center;
 }
 
 /*-----Footer-----*/
@@ -485,7 +499,7 @@ iframe {
     font-family: 'Lora', serif;
     text-transform: uppercase;
     font-weight: 800;
-    font-size: 28px;
+    font-size: 1.77em;
     margin: 0 35px;
     transition: all ease-in-out 0.3s;
 }
@@ -496,12 +510,37 @@ iframe {
 }
 
 
-
 .footer__bottom a:hover {
     text-decoration: underline;
 }
 
+/*-----Kampagne spil-----*/
 
+#spil {
+    background-color: #0c1244;
+}
+
+#spil h1 {
+    color: white;
+}
+
+#spil p {
+    color: white;
+}
+
+#spil .sectionwrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+#spil .col {
+    flex-grow: 0.3;
+    flex-basis: 300px;
+    margin-left: 10%;
+    flex-basis: 57%;
+}
 
 /*-----Media-----*/
 
@@ -525,6 +564,7 @@ iframe {
     iframe {
         width: 100%;
         height: 100%;
+        border-radius: 10px;
     }
 
     /*-----Video portfolio-----*/
@@ -542,88 +582,145 @@ iframe {
         width: 1024px;
     }
 
+
+    /*-----Spil-----*/
+
+    .game .section_txt {
+        width: 200px;
+    }
+
+    .game .section_item {
+        width: 500px;
+    }
 }
 
-@media screen and (min-width: 1024px) {
 
-    .navigation {
-        height: 70px;
-        display: flex;
+
+
+
+.navigation {
+    height: 70px;
+    display: flex;
+}
+
+.logo-container {
+    padding: 25px;
+    z-index: 9999;
+}
+
+.logo {
+    z-index: 9999;
+}
+
+.mainmenu-wrapper {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    top: 0;
+    transform: translateX(0%);
+    opacity: 1;
+    justify-content: center;
+    z-index: 300;
+    height: 5%;
+}
+
+
+.logo-container {
+    margin-left: -0.7vw
+}
+
+.navigation li.nav-item a {
+    color: #022D1B;
+    font-family: 'Lora', serif;
+    font-size: 1.76471rem;
+    font-weight: 800;
+    text-decoration: none;
+    position: inherit;
+    transition: all .3s ease;
+    padding: 25px 25px;
+    overflow: hidden;
+    text-align: inherit;
+    height: 20px;
+    border-bottom: 0;
+}
+
+.nav-item {
+    height: 68px
+}
+
+ul.level-1 {
+    display: inline-block;
+    padding: 0;
+    line-height: 22px;
+    position: static;
+    vertical-align: middle;
+    text-align: right;
+}
+
+
+/*-----Menu-knap-----*/
+
+/*burger knappen*/
+
+.menu-toggle {
+    display: none;
+}
+
+.lines {
+    display: none;
+}
+
+
+/*-----Kampagne video-----*/
+
+.videoInfo {
+    max-width: 82%;
+    margin-left: 100px;
+}
+
+
+/*-----Spil-----*/
+
+.game .section_item {
+    width: 100vw;
+}
+
+.game .section_txt {
+    width: 800px;
+}
+
+}
+
+@media only screen and (max-width: 500px) {
+    #anmeldelser .col {
+        flex-basis: 1000px;
     }
 
-    .logo-container {
-        padding: 25px;
-        z-index: 9999;
+    #anmeldelser {
+        padding: 43px 23px;
     }
 
-    .logo {
-        z-index: 9999;
+    #anmeldelser img {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #anmeldelser .col {
+        flex-basis: 600px;
     }
 
-    .mainmenu-wrapper {
-        display: flex;
-        background-color: rgba(0, 0, 0, 0);
-        position: fixed;
-        top: 0;
-        transform: translateX(0%);
-        opacity: 1;
-        justify-content: center;
-        z-index: 300;
-        height: 5%;
+    #anmeldelser {
+        padding: 10px 10px;
     }
 
-
-    .logo-container {
-        margin-left: -0.7vw
-            /*margin-left: 117px;*/
+    #anmeldelser img {
+        width: 93%;
+        padding: 20px;
     }
 
-    .navigation li.nav-item a {
-        color: #022D1B;
-        font-family: 'Lora', serif;
-        font-size: 1.76471rem;
-        font-weight: 800;
-        text-decoration: none;
-        position: inherit;
-        transition: all .3s ease;
-        padding: 25px 25px;
-        overflow: hidden;
-        text-align: inherit;
-        height: 20px;
-        border-bottom: 0;
-    }
-
-    .nav-item {
-        height: 68px
-    }
-
-    ul.level-1 {
-        display: inline-block;
-        padding: 0;
-        line-height: 22px;
-        position: static;
-        vertical-align: middle;
-        text-align: right;
-    }
-
-
-    /*-----Menu-knap-----*/
-
-    /*burger knappen*/
-
-    .menu-toggle {
-        display: none;
-    }
-
-    .lines {
-        display: none;
-    }
-
-
-    /*-----Kampagne video-----*/
-
-    .videoInfo {
-        max-width: 82%;
-        margin-left: 96px;
+    iframe {
+        border-radius: 10px;
     }
 }
