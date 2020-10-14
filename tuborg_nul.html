@@ -70,10 +70,12 @@
                 <div class="txt">
                     <h1>Tuborg Nul - Øl til livet</h1>
                     <p>Når Tuborg siger NUL, så mener vi nul! Ikke 0,2% eller 0,5% men 0% alkohol. Og når vi brygger en pilsner helt uden alkohol, så brygger vi den lige så omsorgsfuldt, og fylder den med lige så meget Tuborg kvalitet, som når vi brygger vores øvrige øl. Som resultat kan du nu nyde en forfriskende, let drikkelig, velskummende og velsmagende Tuborg NUL, helt uden alkohol. Tuborg NUL ligner en pilsner, Tuborg NUL smager som en pilsner, fordi Tuborg NUL er en pilsner. </p>
+                    <p>Vi har lavet en kampagne med navnet “øl til livet” og med vores koncept vil vi gerne vise, at Tuborg NUL ikke “bare” en alkoholfri øl, som kun drikkes når man skal køre, men et hverdagsprodukt der er passende til alle hverdagssituationer.
+                    </p>
                 </div>
             </div>
             <div class="col">
-                <img src="images/tuborgIGlas.jpg" alt="Tuborg i glas">
+                <img src="images/olTilLivetGul.png" alt="Tuborg i glas">
             </div>
         </div>
     </section>
@@ -83,7 +85,7 @@
         <div class="sectionwrapper">
             <div class="videoInfo">
                 <h1>Kampagnefilm - "Tuborg NUL - øl til livet"</h1>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/uH-qh_3LFhc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <video src="Gruppe2-kampagnevideo-lang.mp4" controls poster=""></video>
             </div>
         </div>
     </section>
@@ -172,7 +174,6 @@
                 <p>
                     Vand, bygmalt, kuldioxid, naturlige aromaer og humle.
                 </p>
-                <h2>Næringsindhold</h2>
             </div>
         </div>
     </section>
@@ -272,15 +273,15 @@
 
         const output = document.querySelector('#output');
 
-        document.querySelector("#tuborg").forEach((img, i) => {
-            img.setAttribute("y1", 100 - values[i]);
+        /*     document.querySelector("#tuborg").forEach((img, i) => {
+          img.setAttribute("y1", 100 - values[i]);
 
-            //vis data i output ved mouseover
-            tuborg.addEventListener("mouseover", e => vis(e));
+          //vis data i output ved mouseover
+          tuborg.addEventListener("mouseover", e => vis(e));
 
-            //skjul data ved mouseout
-            tuborg.addEventListener("mouseout", skjul);
-        });
+          //skjul data ved mouseout
+          tuborg.addEventListener("mouseout", skjul);
+          });*/
 
         //denne funktion viser <p> output-elementet og ændrer textContent dynamisk
         function vis(e) {
@@ -303,8 +304,5 @@
             output.style.display = "none";
             window.removeEventListener("mouseover", followMouse);
         }
-
     </script>
-</body>
-
-</html>
+</body></html>

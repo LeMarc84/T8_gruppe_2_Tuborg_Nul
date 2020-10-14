@@ -58,7 +58,6 @@ p {
     font-size: 1.06em;
 }
 
-
 html {
     scroll-behavior: smooth;
     scroll-padding-right: 60px;
@@ -101,7 +100,6 @@ html {
     top: 0;
     transition: all .5s;
     display: block;
-    padding-bottom: 22px;
 
 }
 
@@ -232,13 +230,17 @@ left: 0;
 /*-----Kampagne video-----*/
 
 #kampagnevideo {
+    width: 100%;
     background-color: #253d80;
-    padding: 25px 0px 20px;
-    max-width: 100vw;
+    padding-bottom: 20px;
+
 }
 
 #kampagnevideo .sectionwrapper {
-    padding: 20px 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    width: 100%;
 }
 
 #kampagnevideo h1 {
@@ -252,26 +254,27 @@ left: 0;
     width: 350px;
 }
 
-
-iframe {
+#kampagnevideo .videoInfo {
+    /*    margin-left: 400px;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
-.videoInfo {
-    max-width: 1052px;
-    margin-left: 16px;
-    margin-bottom: 60px;
+#kampagnevideo .videoInfo video {
+    max-width: 500px;
+    width: 100%;
 }
-
 
 /*-----Video portfolio-----*/
 
 /*-Kampagne video2-*/
 
+/*
 #kampagnevideo2 {
     background-color: #253d80;
-    padding: 25px 0px 1px;
-    max-width: 100vw;
 }
 
 #kampagnevideo2 h1 {
@@ -283,19 +286,37 @@ iframe {
     margin-bottom: 1rem;
     font-weight: 100;
     width: 350px;
-}
-
-
-iframe {
-    width: 100%;
-}
+}*/
 
 
 /*-SoMe Video-*/
 
-#soMeVideo {
-    padding: 25px 0px 1px;
-    max-width: 100vw;
+#soMeVideo .videoInfo {
+    width: 500px;
+    margin: 0 auto;
+
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+#soMeVideo .videoInfo video {
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+
+}
+
+#soMeVideo .sectionwrapper {
+    border: solid white;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+#soMeVideo h1 {
+    color: white;
 }
 
 .videoInfo_wrapper h2 {
@@ -305,11 +326,9 @@ iframe {
     width: 350px;
 }
 
-.videoInfo {
-    max-width: 1052px;
-    margin-left: 158px;
-    margin-bottom: 90px;
-}
+/*.videoInfo {
+    margin-left: 400px;
+}*/
 
 
 /*-----Citat fra Tuborg-----*/
@@ -356,6 +375,11 @@ iframe {
     font-style: italic;
 }
 
+#næringsindhold h2 {
+    color: #0c1244;
+    ;
+}
+
 #næringsindhold p {
     margin-top: -16px;
 }
@@ -370,7 +394,7 @@ iframe {
 }
 
 .popup {
-    /*display: none;*/
+    display: none;
     position: absolute;
     background: #093A82;
     background: #FAC177;
@@ -382,7 +406,7 @@ iframe {
     -moz-border-radius: 10px;
     /* margin-top: -105px; */
     /* margin-left: 40px; */
-    color: white;
+    color: black;
     z-index: 1;
     padding: 10px;
     margin-left: 16%;
@@ -542,6 +566,9 @@ iframe {
     flex-basis: 57%;
 }
 
+
+
+
 /*-----Media-----*/
 
 @media screen and (min-width: 768px) {
@@ -561,11 +588,11 @@ iframe {
         height: 500px;
     }
 
-    iframe {
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-    }
+    /*  iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+  }*/
 
     /*-----Video portfolio-----*/
 
@@ -592,102 +619,94 @@ iframe {
     .game .section_item {
         width: 500px;
     }
-}
+
+    .navigation {
+        height: 70px;
+        display: flex;
+    }
+
+    .logo-container {
+        padding: 25px;
+        z-index: 9999;
+    }
+
+    .logo {
+        z-index: 9999;
+    }
+
+    .mainmenu-wrapper {
+        display: flex;
+        background-color: rgba(0, 0, 0, 0);
+        position: fixed;
+        top: 0;
+        transform: translateX(0%);
+        opacity: 1;
+        justify-content: center;
+        z-index: 300;
+        height: 5%;
+    }
+
+
+    .logo-container {
+        margin-left: -0.7vw
+    }
+
+    .navigation li.nav-item a {
+        color: #022D1B;
+        font-family: 'Lora', serif;
+        font-size: 1.76471rem;
+        font-weight: 800;
+        text-decoration: none;
+        position: inherit;
+        transition: all .3s ease;
+        padding: 25px 25px;
+        overflow: hidden;
+        text-align: inherit;
+        height: 20px;
+        border-bottom: 0;
+    }
+
+    .nav-item {
+        height: 68px
+    }
+
+    ul.level-1 {
+        display: inline-block;
+        padding: 0;
+        line-height: 22px;
+        position: static;
+        vertical-align: middle;
+        text-align: right;
+    }
+
+
+    /*-----Menu-knap-----*/
+
+    /*burger knappen*/
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .lines {
+        display: none;
+    }
+
+    .navigation {
+        padding-bottom: 22px;
+    }
 
 
 
+    /*-----Spil-----*/
 
+    .game .section_item {
+        width: 100vw;
+    }
 
-.navigation {
-    height: 70px;
-    display: flex;
-}
-
-.logo-container {
-    padding: 25px;
-    z-index: 9999;
-}
-
-.logo {
-    z-index: 9999;
-}
-
-.mainmenu-wrapper {
-    display: flex;
-    background-color: rgba(0, 0, 0, 0);
-    position: fixed;
-    top: 0;
-    transform: translateX(0%);
-    opacity: 1;
-    justify-content: center;
-    z-index: 300;
-    height: 5%;
-}
-
-
-.logo-container {
-    margin-left: -0.7vw
-}
-
-.navigation li.nav-item a {
-    color: #022D1B;
-    font-family: 'Lora', serif;
-    font-size: 1.76471rem;
-    font-weight: 800;
-    text-decoration: none;
-    position: inherit;
-    transition: all .3s ease;
-    padding: 25px 25px;
-    overflow: hidden;
-    text-align: inherit;
-    height: 20px;
-    border-bottom: 0;
-}
-
-.nav-item {
-    height: 68px
-}
-
-ul.level-1 {
-    display: inline-block;
-    padding: 0;
-    line-height: 22px;
-    position: static;
-    vertical-align: middle;
-    text-align: right;
-}
-
-
-/*-----Menu-knap-----*/
-
-/*burger knappen*/
-
-.menu-toggle {
-    display: none;
-}
-
-.lines {
-    display: none;
-}
-
-
-/*-----Kampagne video-----*/
-
-.videoInfo {
-    max-width: 82%;
-    margin-left: 100px;
-}
-
-
-/*-----Spil-----*/
-
-.game .section_item {
-    width: 100vw;
-}
-
-.game .section_txt {
-    width: 800px;
-}
+    .game .section_txt {
+        width: 800px;
+    }
 
 }
 
@@ -704,23 +723,33 @@ ul.level-1 {
         width: 90%;
         padding: 20px;
     }
-}
 
-@media only screen and (max-width: 800px) {
-    #anmeldelser .col {
-        flex-basis: 600px;
+    .menu-toggle {
+        display: block;
     }
 
-    #anmeldelser {
-        padding: 10px 10px;
+    #soMeVideo .videoInfo video {
+        width: 100%;
+
     }
 
-    #anmeldelser img {
-        width: 93%;
-        padding: 20px;
-    }
 
-    iframe {
-        border-radius: 10px;
+
+    @media only screen and (max-width: 800px) {
+        #anmeldelser .col {
+            flex-basis: 600px;
+        }
+
+        #anmeldelser {
+            padding: 10px 10px;
+        }
+
+        #anmeldelser img {
+            width: 93%;
+            padding: 20px;
+        }
+
+        .videoInfo {
+            margin: 10px;
+        }
     }
-}
